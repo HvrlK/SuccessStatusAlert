@@ -147,7 +147,8 @@ fileprivate extension UIWindow {
         if let statusAlert = self.subviews.first(where: { $0 is SuccessStatusAlert }) as? SuccessStatusAlert  {
             statusAlert.hideAlert(delay: duration)
         } else {
-            let statusAlert = UINib(nibName: String(describing: SuccessStatusAlert.self), bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SuccessStatusAlert
+            let bundle = Bundle(for: SuccessStatusAlert.self)
+            let statusAlert = UINib(nibName: String(describing: SuccessStatusAlert.self), bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as! SuccessStatusAlert
             statusAlert.configureView(in: self, title: title, description: description, duration: duration)
             statusAlert.showCheckmark(animated: true)
             DispatchQueue.main.asyncAfter(deadline: .now() + statusAlert.defaultFadeAnimationDuration) { [weak statusAlert] in

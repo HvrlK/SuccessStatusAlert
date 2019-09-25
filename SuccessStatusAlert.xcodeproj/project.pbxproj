@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDC89A50233B554700CCE35B /* SuccessStatusAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEA334B233B3501007DCC3C /* SuccessStatusAlert.framework */; };
+		DDC89A51233B554700CCE35B /* SuccessStatusAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDEA334B233B3501007DCC3C /* SuccessStatusAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DDEA3350233B3501007DCC3C /* SuccessStatusAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = DDEA334E233B3501007DCC3C /* SuccessStatusAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDEA3375233B363B007DCC3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA3374233B363B007DCC3C /* AppDelegate.swift */; };
 		DDEA3379233B363B007DCC3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA3378233B363B007DCC3C /* ViewController.swift */; };
@@ -18,10 +20,33 @@
 		DDEA343F233B3D6F007DCC3C /* SuccessStatusAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA343E233B3D6F007DCC3C /* SuccessStatusAlert.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DDC89A52233B554700CCE35B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDEA3342233B3501007DCC3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDEA334A233B3501007DCC3C;
+			remoteInfo = SuccessStatusAlert;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DDC89A54233B554700CCE35B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DDC89A51233B554700CCE35B /* SuccessStatusAlert.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DDEA334B233B3501007DCC3C /* SuccessStatusAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuccessStatusAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEA334E233B3501007DCC3C /* SuccessStatusAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuccessStatusAlert.h; sourceTree = "<group>"; };
-		DDEA334F233B3501007DCC3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDEA3372233B363B007DCC3C /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEA3374233B363B007DCC3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDEA3378233B363B007DCC3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,18 +71,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC89A50233B554700CCE35B /* SuccessStatusAlert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DDC89A4F233B554700CCE35B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DDEA3341233B3501007DCC3C = {
 			isa = PBXGroup;
 			children = (
 				DDEA334D233B3501007DCC3C /* SuccessStatusAlert */,
 				DDEA3373233B363B007DCC3C /* Examples */,
 				DDEA334C233B3501007DCC3C /* Products */,
+				DDC89A4F233B554700CCE35B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,7 +111,6 @@
 				DDEA343E233B3D6F007DCC3C /* SuccessStatusAlert.swift */,
 				DDEA338A233B3AAC007DCC3C /* SuccessStatusAlert.xib */,
 				DDEA334E233B3501007DCC3C /* SuccessStatusAlert.h */,
-				DDEA334F233B3501007DCC3C /* Info.plist */,
 			);
 			path = SuccessStatusAlert;
 			sourceTree = "<group>";
@@ -134,10 +167,12 @@
 				DDEA336E233B363B007DCC3C /* Sources */,
 				DDEA336F233B363B007DCC3C /* Frameworks */,
 				DDEA3370233B363B007DCC3C /* Resources */,
+				DDC89A54233B554700CCE35B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DDC89A53233B554700CCE35B /* PBXTargetDependency */,
 			);
 			name = Examples;
 			productName = Examples;
@@ -222,6 +257,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDC89A53233B554700CCE35B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDEA334A233B3501007DCC3C /* SuccessStatusAlert */;
+			targetProxy = DDC89A52233B554700CCE35B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DDEA337A233B363B007DCC3C /* Main.storyboard */ = {
