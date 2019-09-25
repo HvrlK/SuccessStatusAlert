@@ -14,6 +14,9 @@
 		DDEA337C233B363B007DCC3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDEA337A233B363B007DCC3C /* Main.storyboard */; };
 		DDEA337E233B363C007DCC3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDEA337D233B363C007DCC3C /* Assets.xcassets */; };
 		DDEA3381233B363C007DCC3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDEA337F233B363C007DCC3C /* LaunchScreen.storyboard */; };
+		DDEA338D233B3AAC007DCC3C /* SuccessStatusAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDEA338A233B3AAC007DCC3C /* SuccessStatusAlert.xib */; };
+		DDEA343D233B3D4E007DCC3C /* RoundedCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA343C233B3D4E007DCC3C /* RoundedCheckmarkView.swift */; };
+		DDEA343F233B3D6F007DCC3C /* SuccessStatusAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA343E233B3D6F007DCC3C /* SuccessStatusAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		DDEA337D233B363C007DCC3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDEA3380233B363C007DCC3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDEA3382233B363C007DCC3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDEA338A233B3AAC007DCC3C /* SuccessStatusAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuccessStatusAlert.xib; sourceTree = "<group>"; };
+		DDEA343C233B3D4E007DCC3C /* RoundedCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCheckmarkView.swift; sourceTree = "<group>"; };
+		DDEA343E233B3D6F007DCC3C /* SuccessStatusAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStatusAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,9 @@
 		DDEA334D233B3501007DCC3C /* SuccessStatusAlert */ = {
 			isa = PBXGroup;
 			children = (
+				DDEA343C233B3D4E007DCC3C /* RoundedCheckmarkView.swift */,
+				DDEA343E233B3D6F007DCC3C /* SuccessStatusAlert.swift */,
+				DDEA338A233B3AAC007DCC3C /* SuccessStatusAlert.xib */,
 				DDEA334E233B3501007DCC3C /* SuccessStatusAlert.h */,
 				DDEA334F233B3501007DCC3C /* Info.plist */,
 			);
@@ -149,6 +158,7 @@
 				TargetAttributes = {
 					DDEA334A233B3501007DCC3C = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 					DDEA3371233B363B007DCC3C = {
 						CreatedOnToolsVersion = 11.0;
@@ -179,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDEA338D233B3AAC007DCC3C /* SuccessStatusAlert.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +210,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDEA343F233B3D6F007DCC3C /* SuccessStatusAlert.swift in Sources */,
+				DDEA343D233B3D4E007DCC3C /* RoundedCheckmarkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +370,7 @@
 		DDEA3354233B3501007DCC3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 29A49ZXHHJ;
@@ -375,6 +389,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -383,6 +398,7 @@
 		DDEA3355233B3501007DCC3C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 29A49ZXHHJ;
