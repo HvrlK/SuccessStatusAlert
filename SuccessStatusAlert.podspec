@@ -1,6 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name         = "SuccessStatusAlert"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
+  spec.swift_version = "4.2"
   spec.summary      = "Alert, consistent with iOS 13"
 
   spec.homepage     = "https://github.com/HvrlK"
@@ -12,9 +13,10 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios
   spec.ios.deployment_target = "11.0"
 
-  spec.source       = { :git => "https://github.com/HvrlK/SuccessStatusAlert.git", :branch => "master", :tag => "0.0.1" }
+  spec.source       = { :git => "https://github.com/HvrlK/SuccessStatusAlert.git", :branch => "master", :tag => "0.0.2" }
 
-  spec.source_files  = "SuccessStatusAlert/*"
+  spec.source_files  = "SuccessStatusAlert/*.swift"
   spec.exclude_files = "Examples/*"
+  spec.resources = "SuccessStatusAlert/*.xib"
   spec.frameworks = 'UIKit'
 end
