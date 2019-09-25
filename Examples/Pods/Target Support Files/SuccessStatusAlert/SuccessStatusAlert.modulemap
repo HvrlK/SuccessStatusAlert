@@ -1,0 +1,6 @@
+framework module SuccessStatusAlert {
+  umbrella header "SuccessStatusAlert-umbrella.h"
+
+  export *
+  module * { export * }
+}
