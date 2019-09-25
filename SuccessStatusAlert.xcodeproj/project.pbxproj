@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DDEA3350233B3501007DCC3C /* SuccessStatusAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = DDEA334E233B3501007DCC3C /* SuccessStatusAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDEA3375233B363B007DCC3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA3374233B363B007DCC3C /* AppDelegate.swift */; };
-		DDEA3377233B363B007DCC3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA3376233B363B007DCC3C /* SceneDelegate.swift */; };
 		DDEA3379233B363B007DCC3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA3378233B363B007DCC3C /* ViewController.swift */; };
 		DDEA337C233B363B007DCC3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDEA337A233B363B007DCC3C /* Main.storyboard */; };
 		DDEA337E233B363C007DCC3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDEA337D233B363C007DCC3C /* Assets.xcassets */; };
@@ -25,7 +24,6 @@
 		DDEA334F233B3501007DCC3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDEA3372233B363B007DCC3C /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEA3374233B363B007DCC3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDEA3376233B363B007DCC3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DDEA3378233B363B007DCC3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DDEA337B233B363B007DCC3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDEA337D233B363C007DCC3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				DDEA3374233B363B007DCC3C /* AppDelegate.swift */,
-				DDEA3376233B363B007DCC3C /* SceneDelegate.swift */,
 				DDEA3378233B363B007DCC3C /* ViewController.swift */,
 				DDEA337A233B363B007DCC3C /* Main.storyboard */,
 				DDEA337D233B363C007DCC3C /* Assets.xcassets */,
@@ -221,7 +218,6 @@
 			files = (
 				DDEA3379233B363B007DCC3C /* ViewController.swift in Sources */,
 				DDEA3375233B363B007DCC3C /* AppDelegate.swift in Sources */,
-				DDEA3377233B363B007DCC3C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,13 +381,14 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = hvrlk.SuccessStatusAlert;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -413,12 +410,13 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = hvrlk.SuccessStatusAlert;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -434,6 +432,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hvrlk.Examples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -453,6 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hvrlk.Examples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
