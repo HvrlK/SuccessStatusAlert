@@ -10,6 +10,11 @@ import UIKit
 @IBDesignable
 final public class SuccessStatusAlert: UIView {
     
+    enum Appearance {
+        case light
+        case dark
+    }
+    
     // MARK: Outlets
     
     @IBOutlet weak var checkmarkView: RoundedCheckmarkView!
@@ -27,20 +32,6 @@ final public class SuccessStatusAlert: UIView {
     fileprivate let defaultFadeAnimationDuration: TimeInterval = TimeInterval(UINavigationController.hideShowBarDuration)
     
     @IBInspectable
-    public dynamic var contentBackgroundColor: UIColor? = .white {
-        didSet {
-            shadowView.backgroundColor = contentBackgroundColor
-        }
-    }
-    
-    @IBInspectable
-    public dynamic var visualEffect: UIVisualEffect? = UIBlurEffect(style: .regular) {
-        didSet {
-            visualEffectView.effect = visualEffect
-        }
-    }
-    
-    @IBInspectable
     public dynamic var titleColor: UIColor? = .systemGray {
         didSet {
             titleLabel.textColor = titleColor
@@ -56,7 +47,7 @@ final public class SuccessStatusAlert: UIView {
     
     // MARK: Private Methods
             
-    fileprivate func configureView(in parent: UIView, title: String, description: String?, duration: TimeInterval) {
+    fileprivate func configureView(in parent: UIView, title: String, description: String?, appearance: Appearance, duration: TimeInterval) {
         visualEffectView.layer.cornerRadius = cornerRadius
         visualEffectView.layer.masksToBounds = true
        
@@ -66,6 +57,19 @@ final public class SuccessStatusAlert: UIView {
         shadowView.layer.masksToBounds = false
         shadowView.alpha = 0.9
         titleLabel.text = title
+        
+        switch appearance {
+        case .light:
+            visualEffectView.effect = UIBlurEffect(style: .regular)
+            shadowView.backgroundColor = .white
+        case .dark:
+            shadowView.backgroundColor = .black
+            if #available(iOS 13, *) {
+                visualEffectView.effect = UIBlurEffect(style: .systemMaterial)
+            } else {
+                visualEffectView.effect = UIBlurEffect(style: .regular)
+            }
+        }
         
         if let description = description {
             descriptionLabel.text = description
@@ -143,13 +147,13 @@ fileprivate func debounce<T>(interval: TimeInterval, queue: DispatchQueue, actio
 // MARK: - Extensions
 
 fileprivate extension UIWindow {
-    func showSuccessStatusAlert(title: String, description: String?, duration: TimeInterval) {
+    func showSuccessStatusAlert(title: String, description: String?, appearance: SuccessStatusAlert.Appearance, duration: TimeInterval) {
         if let statusAlert = self.subviews.first(where: { $0 is SuccessStatusAlert }) as? SuccessStatusAlert  {
             statusAlert.hideAlert(delay: duration)
         } else {
             let bundle = Bundle(for: SuccessStatusAlert.self)
             let statusAlert = UINib(nibName: String(describing: SuccessStatusAlert.self), bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as! SuccessStatusAlert
-            statusAlert.configureView(in: self, title: title, description: description, duration: duration)
+            statusAlert.configureView(in: self, title: title, description: description, appearance: appearance, duration: duration)
             statusAlert.showCheckmark(animated: true)
             DispatchQueue.main.asyncAfter(deadline: .now() + statusAlert.defaultFadeAnimationDuration) { [weak statusAlert] in
                 statusAlert?.hideAlert(delay: duration)
@@ -163,6 +167,17 @@ public extension UIViewController {
         guard let window = UIApplication.shared.keyWindow else {
             return
         }
-        window.showSuccessStatusAlert(title: title, description: description, duration: duration)
+        let appearance: SuccessStatusAlert.Appearance
+        if #available(iOS 13, *) {
+            switch self.traitCollection.userInterfaceStyle {
+            case .dark:
+                appearance = .dark
+            default:
+                appearance = .light
+            }
+        } else {
+            appearance = .light
+        }
+        window.showSuccessStatusAlert(title: title, description: description, appearance: appearance, duration: duration)
     }
 }

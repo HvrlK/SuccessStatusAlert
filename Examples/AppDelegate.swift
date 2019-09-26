@@ -20,13 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func configureSuccessStatusAlert() {
         SuccessStatusAlert.appearance().tintColor = .systemGreen
-        SuccessStatusAlert.appearance().contentBackgroundColor = .black
         SuccessStatusAlert.appearance().titleColor = .systemGray
         if #available(iOS 13.0, *) {
-            SuccessStatusAlert.appearance().visualEffect = UIBlurEffect(style: .systemMaterial)
             SuccessStatusAlert.appearance().descriptionColor = .systemGray2
         } else {
-            SuccessStatusAlert.appearance().visualEffect = UIBlurEffect(style: .regular)
             SuccessStatusAlert.appearance().descriptionColor = UIColor.systemGray.withAlphaComponent(0.8)
         }
     }
